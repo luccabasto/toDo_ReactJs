@@ -1,0 +1,54 @@
+@import url(/src/styles/btnStyles.css);
+@font-face{
+  font-family: titillium-web;
+  src: url(/src/arqvs/font_Titillium/TitilliumWeb-Regular.ttf);
+}
+
+/** Realizando a formação inicial 
+do projeto, o css. global */
+:root{
+
+  --fontPrimary: titillium-web;
+}
+
+
+body{
+  font-family: var(--fontPrimary) ;
+  background-color: #f4f4f4;
+  padding: 30px ;
+  color: #333;
+  background-image: url(./images/backgorund.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.app{
+  max-width: 600px;
+  margin: 0 auto 300px;
+        /*Glassy background*/
+    background-color: rgba(255, 255, 255, 0.29);
+    box-shadow: 0 4px 30px rgb(117, 172, 175, 0.7);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(255, 255, 255, 0.64);
+
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+h1{
+  text-align: center;
+}
+h2{
+  margin-bottom: 10px;
+}
+p{
+  margin: 10px 0;
+}
+input,
+button{
+  box-sizing: border-box;
+}
+
+
+

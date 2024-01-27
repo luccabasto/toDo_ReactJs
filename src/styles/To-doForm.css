@@ -1,0 +1,14 @@
+@import url(/src/App.css);
+
+.todo-form{
+    padding-bottom: 1.5rem;
+
+}
+
+.todo-form input, select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: solid .1px rgb(20, 45, 86, 0.30);
+    border-radius: 10px;
+    width: 100%;
+}
