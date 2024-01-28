@@ -28,32 +28,42 @@ function App() {
     isCompleted: false,
   }
 ]); 
-
-  const addToDo = (text, category) => {
-
-    const newtoDo = [...to_dos, {
-
+//Add toDO
+const addToDo = (text, category) => {
+  const newToDo = [
+    ...to_dos,
+    {
       id: Math.floor(Math.random() * 10000),
       text,
       category,
       isCompleted: false,
-
-      },
+    }
   ];
 
-  setTo_dos(newtoDo);
-  }
+  setTo_dos(newToDo);
+};
+
+    
+
+///Remove toDo
+  const removeToDo = (id) => {
+    const newtoDo = [...to_dos]
+    const filteredToDo = newtoDo.filter((to_do) => to_do.id !== id ? to_do : null
+    );
+    setTo_dos(filteredToDo);
+    };
 
   return <div className='app'> 
     <h1>Lista de Tarefas</h1>
     <div className='to_do-list'>
       {to_dos.map((to_do) => ( ///Aqui entrou uma aero function
 
-        <To_Do key={to_do.id} to_do={to_do}/> 
+        <To_Do key={to_do.id} to_do={to_do} removeToDo={removeToDo}/> 
         //Importei o componente To_Do e estou passando as props. 
       ))}
     </div>
     <ToDoForm addToDo={addToDo}/>
     </div>; 
 }
+
 export default App
