@@ -1,0 +1,60 @@
+@import url(/src/App.css);
+
+/** Search */
+
+.search h2{
+    color: #f4f4f4;
+}
+
+    #searchInpt{
+        border-radius: var(--border-radius);
+        width: 100%;
+        padding: 5px;
+        border: solid .1px rgb(20, 45, 86, 0.30);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+
+    /* Semi Glassy*/
+        backdrop-filter: blur(6.1px);
+        -webkit-backdrop-filter: blur(6.1px);
+        background-color: rgba(255, 255, 255, 0.85);
+}
+
+    input#searchInpt::placeholder {
+        color: #a0a0a0;
+        font-style: italic;
+        font-size: 15px;
+}
+
+/** Filter */
+
+    
+    .filter h2{
+        color: #f4f4f4;
+    }
+
+    #filterOpts select{
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(6.1px);
+        -webkit-backdrop-filter: blur(6.1px);
+    }
+
+    .filter{
+        margin-bottom: 20px;
+       
+    }
+        .filter-options {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           gap: 3rem;
+        }
+
+        .filter-options div {
+            flex: 1 1 0;
+        }
+
+
+
+
+    

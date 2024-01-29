@@ -27,6 +27,6 @@
     padding: 5px;
     margin-bottom: 10px;
     border: solid .1px rgb(20, 45, 86, 0.30);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     width: 100%;
 }

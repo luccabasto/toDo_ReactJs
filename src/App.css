@@ -1,4 +1,7 @@
-@import url(/src/styles/btnStyles.css);
+@import url(src/styles/btnStyles.css);
+@import url(src/styles/search&filter.css);
+
+
 @font-face{
   font-family: titillium-web;
   src: url(/src/arqvs/font_Titillium/TitilliumWeb-Regular.ttf);
@@ -9,6 +12,7 @@ do projeto, o css. global */
 :root{
 
   --fontPrimary: titillium-web;
+  --border-radius: 10px ;
 }
 
 
@@ -33,11 +37,13 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.64);
 
   padding: 20px 30px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 h1{
   text-align: center;
+  color: #f4f4f4;
+  
 }
 h2{
   margin-bottom: 10px;

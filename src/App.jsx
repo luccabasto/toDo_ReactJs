@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import './styles/To-doForm.css'
+
+ ///Componentes 
+
 import To_Do from './components/toDo'
 import ToDoForm from './components/toDoForm';
+import Search from './components/Search';
+import Filter from './components/Filter';
 
 /// Começamos utilizando a abordagem de usar o useState,
 /// pois ao contrario das variável, é permitido a atualização quando renderiza. Usamos essa abordagem quando queremos manipular valores
@@ -60,18 +65,32 @@ const addToDo = (text, category) => {
         );
         setTo_dos(newtoDo);
       };
-      
+ /// funcionalidade Search 
+ 
+ const [search, setSearch] = useState("");
 
 
   return <div className='app'> 
     <h1>Lista de Tarefas</h1>
+    
+    <Search search={search} setSearch={setSearch}/>
+    <Filter/>
     <div className='to_do-list'>
-      {to_dos.map((to_do) => ( ///Aqui entrou uma aero function
+      {to_dos.
+      filter((to_dos) => 
+      to_dos.text.toLowerCase().includes(search.toLowerCase())
+      ) /// Barra de pesquisa em tempo real.
 
-        <To_Do key={to_do.id} to_do={to_do} removeToDo={removeToDo} completeToDo={completeToDo}/> 
+      .map((to_do) => ( ///Aqui entrou uma aero function
+
+        <To_Do key={to_do.id} 
+        to_do={to_do} 
+        removeToDo={removeToDo} 
+        completeToDo={completeToDo}/> 
         //Importei o componente To_Do e estou passando as props. 
       ))}
     </div>
+
     <ToDoForm addToDo={addToDo}/>
     </div>; 
 }
