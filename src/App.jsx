@@ -42,9 +42,7 @@ const addToDo = (text, category) => {
 
   setTo_dos(newToDo);
 };
-
-    
-
+  
 ///Remove toDo
   const removeToDo = (id) => {
     const newtoDo = [...to_dos]
@@ -53,12 +51,24 @@ const addToDo = (text, category) => {
     setTo_dos(filteredToDo);
     };
 
+
+///Complete toDo
+    
+      const completeToDo = (id) => {
+        const newtoDo = to_dos.map((to_do) =>
+          to_do.id === id ? { ...to_do, isCompleted: !to_do.isCompleted } : to_do
+        );
+        setTo_dos(newtoDo);
+      };
+      
+
+
   return <div className='app'> 
     <h1>Lista de Tarefas</h1>
     <div className='to_do-list'>
       {to_dos.map((to_do) => ( ///Aqui entrou uma aero function
 
-        <To_Do key={to_do.id} to_do={to_do} removeToDo={removeToDo}/> 
+        <To_Do key={to_do.id} to_do={to_do} removeToDo={removeToDo} completeToDo={completeToDo}/> 
         //Importei o componente To_Do e estou passando as props. 
       ))}
     </div>
