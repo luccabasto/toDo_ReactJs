@@ -50,7 +50,7 @@
            gap: 3rem;
         }
 
-        .filter-options div {
+        .filter-options .filter-container {
             flex: 1 1 0;
         }
 

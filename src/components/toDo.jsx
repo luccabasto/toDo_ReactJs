@@ -1,6 +1,8 @@
 import React from 'react'
 import To_DoBtn from './toDoBtn'
 
+
+
 //ATENÇÃO na hora de criar um componente. TEM QUE COMEÇAR COM LETRA MAIUSCULA, caso ao contrário o react. não entende como component.
 
 const To_Do = ({to_do, removeToDo, completeToDo}) => {

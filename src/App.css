@@ -24,6 +24,7 @@ body{
   background-image: url(./images/backgorund.jpg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .app{

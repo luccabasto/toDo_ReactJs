@@ -14,26 +14,28 @@ import Filter from './components/Filter';
 function App() {
   const [to_dos, setTo_dos] = useState([
 
-    { //Aqui estou instanciando uma array contendo 3 objetos.Cada obj tem suas propriedade. 
+{ //Aqui estou instanciando uma array contendo 3 objetos.Cada obj tem suas propriedade. 
       id: 1,
       text: "Criar funcionalidade X no sistema",
       category: "Trabalho",
       isCompleted: false,
   },
   {
-    id: 2, 
+    id: 2,    
     text: "Ir para academia",
     category: "Pessoal",
     isCompleted: false,
   },
   {
     id: 3,
-    text: "Estudar React",
+    text: "Estudar Reac t",
     category: "Estudos",
     isCompleted: false,
   }
 ]); 
+
 //Add toDO
+
 const addToDo = (text, category) => {
   const newToDo = [
     ...to_dos,
@@ -49,6 +51,7 @@ const addToDo = (text, category) => {
 };
   
 ///Remove toDo
+
   const removeToDo = (id) => {
     const newtoDo = [...to_dos]
     const filteredToDo = newtoDo.filter((to_do) => to_do.id !== id ? to_do : null
@@ -69,18 +72,41 @@ const addToDo = (text, category) => {
  
  const [search, setSearch] = useState("");
 
+ ///Filter
+
+ const [filter, setFilter] = useState("All");
+ const [sort, setSort] = useState("Asc");
+
+
 
   return <div className='app'> 
     <h1>Lista de Tarefas</h1>
     
     <Search search={search} setSearch={setSearch}/>
-    <Filter/>
+    <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+
     <div className='to_do-list'>
-      {to_dos.
-      filter((to_dos) => 
+      {to_dos
+
+      .filter((to_do) => 
+      filter === "All" 
+        ? true 
+        : filter 
+        === "Completed" 
+        ? to_do.isCompleted 
+        : !to_do.isCompleted 
+        
+        )
+      .filter((to_dos) => 
       to_dos.text.toLowerCase().includes(search.toLowerCase())
       ) /// Barra de pesquisa em tempo real.
 
+      .sort((a, b) => 
+        sort === "Asc" 
+        ? a.text.localeCompare(b.text)
+        : b.text.localeCompare(a.text)
+        
+        )
       .map((to_do) => ( ///Aqui entrou uma aero function
 
         <To_Do key={to_do.id} 
